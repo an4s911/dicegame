@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 150px 1fr;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-areas:
+        "header header header"
+        "total-scores game-play turn-score";
+}
+
+header,
+.total-scores,
+main,
+.turn-score {
+    display: grid;
+}
+
+header {
+    place-content: center;
+
+    grid-area: header;
+
+    text-align: center;
+
+    font-size: 1.5em;
+}
+
+.total-scores {
+    grid-area: total-scores;
+
+    justify-items: center;
+}
+
+.total-scores > div {
+    display: grid;
+
+    justify-items: center;
+}
+
+main {
+    grid-area: game-play;
+
+    justify-content: center;
+}
+
+.turn-score {
+    grid-area: turn-score;
+
+    justify-items: center;
+}
