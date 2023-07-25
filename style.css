@@ -42,6 +42,8 @@ header {
 }
 
 main {
+    gap: 5px;
+
     grid-area: game-play;
 
     grid-template-areas:
@@ -79,12 +81,99 @@ div.dice {
     display: inline-block;
     border: 1px solid black;
     border-radius: 15px;
+
+    padding: 3px;
+    display: grid;
+
+    gap: 5px;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "one    ....  two"
+        "three  four  five"
+        "six    ....  seven";
 }
 
-.die1 {
+.dice > div {
+    background-color: black;
+
+    border-radius: 100%;
+
+    display: none;
+}
+
+.dice > div:nth-child(1) {
+    grid-area: one;
+}
+
+.dice > div:nth-child(2) {
+    grid-area: two;
+}
+
+.dice > div:nth-child(3) {
+    grid-area: three;
+}
+
+.dice > div:nth-child(4) {
+    grid-area: four;
+}
+
+.dice > div:nth-child(5) {
+    grid-area: five;
+}
+
+.dice > div:nth-child(6) {
+    grid-area: six;
+}
+
+.dice > div:nth-child(7) {
+    grid-area: seven;
+}
+
+.one > div:nth-child(4) {
+    display: block;
+}
+
+.two > div:nth-child(3),
+.two > div:nth-child(5) {
+    display: block;
+}
+
+.three > div:nth-child(1),
+.three > div:nth-child(4),
+.three > div:nth-child(7) {
+    display: block;
+}
+
+.four > div:nth-child(1),
+.four > div:nth-child(2),
+.four > div:nth-child(6),
+.four > div:nth-child(7) {
+    display: block;
+}
+
+.five > div:nth-child(1),
+.five > div:nth-child(2),
+.five > div:nth-child(4),
+.five > div:nth-child(6),
+.five > div:nth-child(7) {
+    display: block;
+}
+
+.six > div:nth-child(1),
+.six > div:nth-child(2),
+.six > div:nth-child(3),
+.six > div:nth-child(5),
+.six > div:nth-child(6),
+.six > div:nth-child(7) {
+    display: block;
+}
+
+#die1 {
     grid-area: die1;
 }
 
-.die2 {
+#die2 {
     grid-area: die2;
 }
