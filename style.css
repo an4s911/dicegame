@@ -44,11 +44,47 @@ header {
 main {
     grid-area: game-play;
 
+    grid-template-areas:
+        "heading heading"
+        "die1 die2"
+        "roll-btn roll-btn"
+        "turn-over-btn turn-over-btn";
+
     justify-content: center;
+}
+
+main > h2 {
+    grid-area: heading;
+}
+
+main > .roll {
+    grid-area: roll-btn;
+}
+
+main > .turn-over {
+    grid-area: turn-over-btn;
 }
 
 .turn-score {
     grid-area: turn-score;
 
     justify-items: center;
+}
+
+/* Dice */
+div.dice {
+    background-color: whitesmoke;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.die1 {
+    grid-area: die1;
+}
+
+.die2 {
+    grid-area: die2;
 }
