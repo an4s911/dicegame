@@ -13,9 +13,9 @@ body {
 }
 
 header,
-.total-scores,
+#total-scores,
 main,
-.turn-score {
+#turn-score {
     display: grid;
 }
 
@@ -29,13 +29,13 @@ header {
     font-size: 1.5em;
 }
 
-.total-scores {
+#total-scores {
     grid-area: total-scores;
 
     justify-items: center;
 }
 
-.total-scores > div {
+#total-scores > div {
     display: grid;
 
     justify-items: center;
@@ -67,7 +67,7 @@ main > #turn-over-btn {
     grid-area: turn-over-btn;
 }
 
-.turn-score {
+#turn-score {
     grid-area: turn-score;
 
     justify-items: center;
