@@ -61,8 +61,10 @@ const currentTurn = {
             this.player = computer;
             emulateComputerTurn();
         } else {
-            rollBtn.removeAttribute("disabled");
-            turnOverBtn.removeAttribute("disabled");
+            setTimeout(() => {
+                rollBtn.removeAttribute("disabled");
+                turnOverBtn.removeAttribute("disabled");
+            }, 400);
             this.player = user;
         }
         turnPronounElement.textContent = this.currentPlayer.pronoun;
@@ -77,13 +79,13 @@ function turnOver() {
     currentTurn.player.score += currentTurn.score;
     setTimeout(() => {
         currentTurn.score = 0;
-    }, 800);
+    }, 400);
 
     if (currentTurn.player.score >= winningScore) {
         playerWins(currentTurn.player);
+    } else {
+        currentTurn.switchPlayer();
     }
-
-    currentTurn.switchPlayer();
 }
 
 function rollAndValidate() {
