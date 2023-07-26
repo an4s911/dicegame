@@ -5,11 +5,15 @@
 
 body {
     display: grid;
+    gap: 20px;
     grid-template-rows: 150px 1fr;
     grid-template-columns: 2fr 3fr 2fr;
     grid-template-areas:
         "header header header"
         "total-scores game-play turn-score";
+
+    color: #2d3239;
+    background-color: #97abaf;
 }
 
 header,
@@ -17,6 +21,7 @@ header,
 main,
 #turn-score {
     display: grid;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 header {
@@ -27,22 +32,60 @@ header {
     text-align: center;
 
     font-size: 1.5em;
+
+    background-color: #f7ef81;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 #total-scores {
     grid-area: total-scores;
 
     justify-items: center;
+
+    background-color: #c4d86f;
+    gap: 15px;
 }
 
 #total-scores > div {
     display: grid;
 
     justify-items: center;
+
+    grid-template-rows: min-content 1fr;
+
+    border: 1px solid black;
+    width: 105px;
+    height: 150px;
+    border-radius: 15px;
+
+    background-color: #b1ca3f;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#total-scores > div > h5 {
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+#total-scores > div > p {
+    font-size: 1.7em;
+    place-self: center;
+}
+
+#total-scores > h2,
+#turn-score > h2 {
+    font-size: 2em;
+}
+
+main,
+#total-scores,
+#turn-score {
+    border-radius: 15px;
+    padding: 30px;
 }
 
 main {
-    gap: 5px;
+    gap: 20px;
 
     grid-area: game-play;
 
@@ -53,11 +96,14 @@ main {
         "turn-over-btn turn-over-btn";
 
     justify-content: center;
+
+    background-color: #a6e79d;
 }
 
 main > h2 {
     grid-area: heading;
     text-align: center;
+    font-size: 2.7em;
 }
 
 main > #roll-btn {
@@ -68,25 +114,70 @@ main > #turn-over-btn {
     grid-area: turn-over-btn;
 }
 
+#roll-btn,
+#turn-over-btn {
+    width: 250px;
+    height: 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #69d75b;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    justify-self: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#roll-btn:hover,
+#turn-over-btn:hover {
+    background-color: #78db6b;
+}
+
+#roll-btn:disabled,
+#turn-over-btn:disabled {
+    background-color: #729f6d;
+    cursor: not-allowed;
+}
+
 #turn-score {
     grid-area: turn-score;
 
     justify-items: center;
+
+    background-color: #c4d86f;
+
+    grid-template-rows: min-content 1fr;
+}
+
+#turn-score > p {
+    display: grid;
+    place-content: center;
+    place-self: center;
+    font-size: 1.7em;
+
+    border: 1px solid black;
+    width: 105px;
+    height: 150px;
+    border-radius: 15px;
+
+    background-color: #b1ca3f;
 }
 
 /* Dice */
 div.dice {
     background-color: whitesmoke;
-    height: 4em;
-    width: 4em;
+    height: 6.5em;
+    width: 6.5em;
     display: inline-block;
     border: 1px solid black;
     border-radius: 15px;
 
-    padding: 3px;
+    padding: 13px;
     display: grid;
 
-    gap: 5px;
+    box-sizing: border-box;
+
+    gap: 3px;
 
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;

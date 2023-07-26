@@ -7,7 +7,7 @@ const dice = document.querySelectorAll(".dice");
 
 const turnPronounElement = document.querySelector("#turn > span");
 
-const turnScoreElement = document.querySelector("#turn-score > p");
+const turnScoreElement = document.querySelector("#turn-score > p > span");
 const playerScoreElement = document.querySelector("#your-score > p");
 const computerScoreElement = document.querySelector("#computer-score > p");
 
