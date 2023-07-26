@@ -52,14 +52,6 @@ header {
     justify-items: center;
 
     grid-template-rows: min-content 1fr;
-
-    border: 1px solid black;
-    width: 105px;
-    height: 150px;
-    border-radius: 15px;
-
-    background-color: #b1ca3f;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 #total-scores > div > h5 {
@@ -149,18 +141,22 @@ main > #turn-over-btn {
     grid-template-rows: min-content 1fr;
 }
 
-#turn-score > p {
+#turn-score > div {
     display: grid;
     place-content: center;
     place-self: center;
     font-size: 1.7em;
+}
 
+#turn-score > div,
+#total-scores > div {
     border: 1px solid black;
     width: 105px;
-    height: 150px;
+    height: 105px;
     border-radius: 15px;
 
     background-color: #b1ca3f;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Dice */
