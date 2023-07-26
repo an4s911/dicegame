@@ -11,6 +11,8 @@ const turnScoreElement = document.querySelector("#turn-score > p");
 const playerScoreElement = document.querySelector("#your-score > p");
 const computerScoreElement = document.querySelector("#computer-score > p");
 
+const winningScore = 100;
+
 let user = {
     playerScore: 0,
     pronoun: "Your",
@@ -77,6 +79,10 @@ function turnOver() {
         currentTurn.score = 0;
     }, 800);
 
+    if (currentTurn.player.score >= winningScore) {
+        playerWins(currentTurn.player);
+    }
+
     currentTurn.switchPlayer();
 }
 
@@ -85,7 +91,10 @@ function rollAndValidate() {
     const validationResult = rollDetails.validateRoll();
     if (validationResult === 1) {
         currentTurn.score += rollDetails.rollValue;
-        if (currentTurn.player === computer) {
+
+        if (currentTurn.player.score + currentTurn.score >= winningScore) {
+            turnOver();
+        } else if (currentTurn.player === computer) {
             if (currentTurn.score >= 20) {
                 turnOver();
             } else {
@@ -101,7 +110,28 @@ function rollAndValidate() {
     }
 }
 
+function playerWins(player) {
+    const name = player === user ? "You" : "Computer";
+    setTimeout(() => {
+        alert(name + " Won!!! with " + player.score + " points");
+    }, 100);
+    setTimeout(() => {
+        resetGame();
+    }, 100);
+}
+
+function resetGame() {
+    user.score = 0;
+    computer.score = 0;
+    rollBtn.removeAttribute("disabled");
+    turnOverBtn.removeAttribute("disabled");
+    currentTurn.player = user;
+    currentTurn.score = 0;
+}
+
 function rollDice() {
+    let audio = new Audio("./dice-roll.mp3");
+    audio.play();
     return {
         die1Value: rollDie(dice[0]),
         die2Value: rollDie(dice[1]),
