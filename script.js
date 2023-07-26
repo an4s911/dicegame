@@ -54,38 +54,52 @@ const currentTurn = {
     },
     switchPlayer: function () {
         if (this.currentPlayer === user) {
-            rollBtn.setAttribute("disabled", false);
-            turnOverBtn.setAttribute("disabled", false);
-            this.player = computer;
-        } else {
             rollBtn.setAttribute("disabled", true);
             turnOverBtn.setAttribute("disabled", true);
+            this.player = computer;
+            emulateComputerTurn();
+        } else {
+            rollBtn.removeAttribute("disabled");
+            turnOverBtn.removeAttribute("disabled");
             this.player = user;
         }
         turnPronounElement.textContent = this.currentPlayer.pronoun;
     },
 };
 
-rollBtn.addEventListener("click", () => {
+rollBtn.addEventListener("click", rollAndValidate);
+
+turnOverBtn.addEventListener("click", turnOver);
+
+function turnOver() {
+    currentTurn.player.score += currentTurn.score;
+    setTimeout(() => {
+        currentTurn.score = 0;
+    }, 800);
+
+    currentTurn.switchPlayer();
+}
+
+function rollAndValidate() {
     const rollDetails = rollDice();
     const validationResult = rollDetails.validateRoll();
     if (validationResult === 1) {
         currentTurn.score += rollDetails.rollValue;
+        if (currentTurn.player === computer) {
+            if (currentTurn.score >= 20) {
+                turnOver();
+            } else {
+                emulateComputerTurn();
+            }
+        }
     } else {
         currentTurn.score = 0;
         if (validationResult === -1) {
             currentTurn.player.score = 0;
         }
-        currentTurn.switchPlayer();
+        turnOver();
     }
-});
-
-turnOverBtn.addEventListener("click", () => {
-    currentTurn.player.score += currentTurn.score;
-    currentTurn.score = 0;
-
-    currentTurn.switchPlayer();
-});
+}
 
 function rollDice() {
     return {
@@ -113,4 +127,8 @@ function rollDie(die) {
     die.className = `dice ${dieOptions[randomNumber]}`;
 
     return randomNumber + 1;
+}
+
+function emulateComputerTurn() {
+    setTimeout(rollAndValidate, 2000);
 }
