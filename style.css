@@ -57,6 +57,7 @@ main {
 
 main > h2 {
     grid-area: heading;
+    text-align: center;
 }
 
 main > #roll-btn {
