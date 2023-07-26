@@ -59,11 +59,11 @@ main > h2 {
     grid-area: heading;
 }
 
-main > .roll {
+main > #roll-btn {
     grid-area: roll-btn;
 }
 
-main > .turn-over {
+main > #turn-over-btn {
     grid-area: turn-over-btn;
 }
 
