@@ -76,8 +76,8 @@ main > #turn-over-btn {
 /* Dice */
 div.dice {
     background-color: whitesmoke;
-    height: 50px;
-    width: 50px;
+    height: 4em;
+    width: 4em;
     display: inline-block;
     border: 1px solid black;
     border-radius: 15px;
@@ -172,8 +172,10 @@ div.dice {
 
 #die1 {
     grid-area: die1;
+    justify-self: end;
 }
 
 #die2 {
     grid-area: die2;
+    justify-self: start;
 }
