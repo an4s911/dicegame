@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", rollDice);
+
 const rollBtn = document.getElementById("roll-btn");
 const turnOverBtn = document.getElementById("turn-over-btn");
 
