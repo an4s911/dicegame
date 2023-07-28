@@ -267,3 +267,48 @@ div.dice {
     grid-area: die2;
     justify-self: start;
 }
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 10% 20%;
+
+    display: grid;
+    place-content: center;
+}
+
+#overlay > div {
+    border: 2px solid black;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+    padding: 30px 50px;
+    box-sizing: border-box;
+
+    display: grid;
+    gap: 15px;
+}
+
+#overlay ul {
+    margin-left: 20px;
+}
+
+#overlay button {
+    justify-self: start;
+    width: 250px;
+    height: 50px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}

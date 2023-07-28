@@ -54,6 +54,42 @@
         <div><span>0</span></div>
     </div>
 
+    <div id="overlay">
+        <div>
+            <h2>Game Rules</h2>
+            <p>Welcome to DiceGame, a thrilling game of chance and strategy played between you and the computer!</p>
+
+            <h3>Rules for Your Turn:</h3>
+
+            <ul>
+                <li>You have two dice to roll, and the sum of both dice is added to your current turn score.</li>
+                <li>End your turn in one of three ways: turn over your dice to add your current turn score to your total
+                    score, roll a single 1 to reset your current turn score to 0, or roll two 1's to reset your total
+                    score to 0 and end your turn.</li>
+                <li>
+                    Alternatively, win the game by reaching a score of 100 or above. If the total score reaches 100 or
+                    more
+                    during your turn, the game ends immediately, even if your current turn is not completed.
+                </li>
+            </ul>
+
+            <p>Once your turn ends without you winning, it's the computer's turn.</p>
+
+            <h3>Rules for the Computer's Turn:</h3>
+
+            <ul>
+                <li>The computer rolls the dice automatically and follows the same rules as you.</li>
+                <li>If the computer rolls a 1, its current turn score resets to 0, just like yours.</li>
+                <li>If the computer rolls two 1's, its total score resets to 0, and its turn ends.</li>
+                <li>The computer has a strategic advantage: if it reaches a current turn score of 20 or more, it turns
+                    over its dice, adding the turn score to its total score, and then continues its turn.</li>
+            </ul>
+
+            <p>Get ready for a fun and competitive gaming experience with DiceGame!</p>
+            <button id="start-btn">START</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 

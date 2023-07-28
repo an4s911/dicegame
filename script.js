@@ -15,6 +15,13 @@ const computerScoreElement = document.querySelector("#computer-score > p");
 
 const winningScore = 100;
 
+const overlay = document.getElementById("overlay");
+const startBtn = document.getElementById("start-btn");
+
+startBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+});
+
 let user = {
     playerScore: 0,
     pronoun: "You",
