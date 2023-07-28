@@ -17,7 +17,8 @@ const winningScore = 100;
 
 let user = {
     playerScore: 0,
-    pronoun: "Your",
+    pronoun: "You",
+    possessivePronoun: "Your",
     set score(value) {
         this.playerScore = value;
         playerScoreElement.textContent = this.playerScore;
@@ -29,7 +30,8 @@ let user = {
 
 let computer = {
     playerScore: 0,
-    pronoun: "Computer's",
+    pronoun: "Computer",
+    possessivePronoun: "Computer's",
     set score(value) {
         this.playerScore = value;
         computerScoreElement.textContent = this.playerScore;
@@ -51,7 +53,7 @@ const currentTurn = {
     },
     set player(otherPlayer) {
         this.currentPlayer = otherPlayer;
-        turnPronounElement.textContent = this.currentPlayer.pronoun;
+        turnPronounElement.textContent = this.currentPlayer.possessivePronoun;
     },
     get player() {
         return this.currentPlayer;
@@ -69,7 +71,7 @@ const currentTurn = {
             }, 400);
             this.player = user;
         }
-        turnPronounElement.textContent = this.currentPlayer.pronoun;
+        turnPronounElement.textContent = this.currentPlayer.possessivePronoun;
     },
 };
 
@@ -115,9 +117,8 @@ function rollAndValidate() {
 }
 
 function playerWins(player) {
-    const name = player === user ? "You" : "Computer";
     setTimeout(() => {
-        alert(name + " Won!!! with " + player.score + " points");
+        alert(player.pronoun + " Won!!! with " + player.score + " points");
     }, 100);
     setTimeout(() => {
         resetGame();
