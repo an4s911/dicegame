@@ -10,7 +10,8 @@ body {
     grid-template-columns: 2fr 3fr 2fr;
     grid-template-areas:
         "header header header"
-        "total-scores game-play turn-score";
+        "total-scores game-play turn-score"
+        "info-box info-box info-box";
 
     color: #2d3239;
     background-color: #97abaf;
@@ -19,7 +20,8 @@ body {
 header,
 #total-scores,
 main,
-#turn-score {
+#turn-score,
+#info-box > div {
     display: grid;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
@@ -266,6 +268,20 @@ div.dice {
 #die2 {
     grid-area: die2;
     justify-self: start;
+}
+
+/* Info box  */
+#info-box {
+    grid-area: info-box;
+    padding: 40px 150px;
+}
+
+#info-box > div {
+    border-radius: 15px;
+    padding: 40px 120px;
+    background-color: #f6b6b8;
+    font-size: 1.3em;
+    font-weight: 300;
 }
 
 /* Overlay */

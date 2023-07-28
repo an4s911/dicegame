@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded", rollDice);
+document.addEventListener("DOMContentLoaded", () => {
+    rollDice();
+    showInfoMsg("Click on Roll to begin the game");
+});
 
 const rollBtn = document.getElementById("roll-btn");
 const turnOverBtn = document.getElementById("turn-over-btn");
@@ -84,7 +87,10 @@ const currentTurn = {
 
 rollBtn.addEventListener("click", rollAndValidate);
 
-turnOverBtn.addEventListener("click", turnOver);
+turnOverBtn.addEventListener("click", () => {
+    turnOver();
+    showInfoMsg("You turned over, you got " + currentTurn.score + " points");
+});
 
 function turnOver() {
     currentTurn.player.score += currentTurn.score;
@@ -102,6 +108,7 @@ function turnOver() {
 function rollAndValidate() {
     const rollDetails = rollDice();
     const validationResult = rollDetails.validateRoll();
+    const player = currentTurn.player;
     if (validationResult === 1) {
         currentTurn.score += rollDetails.rollValue;
 
@@ -109,6 +116,7 @@ function rollAndValidate() {
             turnOver();
         } else if (currentTurn.player === computer) {
             if (currentTurn.score >= 20) {
+                showInfoMsg("Computer got " + player.score + " points");
                 turnOver();
             } else {
                 emulateComputerTurn();
@@ -118,6 +126,9 @@ function rollAndValidate() {
         currentTurn.score = 0;
         if (validationResult === -1) {
             currentTurn.player.score = 0;
+            showInfoMsg(`${player.pronoun} rolled two 1's!`);
+        } else {
+            showInfoMsg(`${player.pronoun} rolled a 1!`);
         }
         turnOver();
     }
@@ -173,4 +184,9 @@ function rollDie(die) {
 
 function emulateComputerTurn() {
     setTimeout(rollAndValidate, 2300);
+}
+
+function showInfoMsg(message) {
+    const infoBox = document.querySelector("#info-box > div > p");
+    infoBox.textContent = message;
 }
