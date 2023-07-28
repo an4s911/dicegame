@@ -172,5 +172,5 @@ function rollDie(die) {
 }
 
 function emulateComputerTurn() {
-    setTimeout(rollAndValidate, 1000);
+    setTimeout(rollAndValidate, 2300);
 }
