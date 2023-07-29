@@ -11,7 +11,8 @@ body {
     grid-template-areas:
         "header header header"
         "total-scores game-play turn-score"
-        "info-box info-box info-box";
+        "info-box info-box info-box"
+        "footer footer footer";
 
     color: #2d3239;
     background-color: #97abaf;
@@ -327,4 +328,19 @@ div.dice {
     border-radius: 15px;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 10px;
+    align-self: start;
+}
+
+footer img {
+    width: 30px;
 }
