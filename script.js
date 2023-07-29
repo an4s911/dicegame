@@ -153,7 +153,7 @@ function resetGame() {
 }
 
 function rollDice() {
-    let audio = new Audio("./dice-roll.mp3");
+    let audio = new Audio("./media/dice-roll.mp3");
     audio.play();
     return {
         die1Value: rollDie(dice[0]),
