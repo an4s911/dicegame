@@ -274,7 +274,7 @@ div.dice {
 /* Info box  */
 #info-box {
     grid-area: info-box;
-    padding: 40px 150px;
+    padding: 25px 150px 10px;
 }
 
 #info-box > div {
