@@ -21,8 +21,16 @@ const winningScore = 100;
 const overlay = document.getElementById("overlay");
 const startBtn = document.getElementById("start-btn");
 
+const showRulesBtn = document.getElementById("show-rules");
+
 startBtn.addEventListener("click", () => {
     overlay.style.display = "none";
+
+});
+
+showRulesBtn.addEventListener("click", () => {
+    startBtn.textContent = "Continue";
+    overlay.style.display = "grid";
 });
 
 let user = {
@@ -68,7 +76,7 @@ const currentTurn = {
     get player() {
         return this.currentPlayer;
     },
-    switchPlayer: function () {
+    switchPlayer: function() {
         if (this.currentPlayer === user) {
             rollBtn.setAttribute("disabled", true);
             turnOverBtn.setAttribute("disabled", true);
@@ -158,7 +166,7 @@ function rollDice() {
     return {
         die1Value: rollDie(dice[0]),
         die2Value: rollDie(dice[1]),
-        validateRoll: function () {
+        validateRoll: function() {
             if (this.die1Value === 1 && this.die2Value === 1) {
                 return -1;
             } else if (this.die1Value === 1 || this.die2Value === 1) {
