@@ -1,114 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dice Game</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dice Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <header>
+            <h1>Dice Game</h1>
+            <button id="show-rules-btn">Show Rules</button>
+        </header>
 
-<body>
-    <header>
-        <h1>Dice Game</h1>
-        <button id="show-rules-btn">Show Rules</button>
-    </header>
-
-    <div id="total-scores">
-        <h2>Total Scores</h2>
-        <div id="your-score">
-            <h5>You</h5>
-            <p>0</p>
+        <div id="total-scores">
+            <h2>Total Scores</h2>
+            <div id="your-score">
+                <h5>You</h5>
+                <p>0</p>
+            </div>
+            <div id="computer-score">
+                <h5>Computer</h5>
+                <p>0</p>
+            </div>
         </div>
-        <div id="computer-score">
-            <h5>Computer</h5>
-            <p>0</p>
+
+        <main>
+            <h2 id="turn"><span>Your</span> Turn</h2>
+            <div id="die1" class="dice">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="die2" class="dice">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <button id="roll-btn">Roll</button>
+            <button id="turn-over-btn">Turn Over</button>
+        </main>
+
+        <div id="turn-score">
+            <h2>Turn Score</h2>
+            <div><span>0</span></div>
         </div>
-    </div>
 
-    <main>
-        <h2 id="turn"><span>Your</span> Turn</h2>
-        <div id="die1" class="dice">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div id="info-box">
+            <div>
+                <p></p>
+            </div>
         </div>
-        <div id="die2" class="dice">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+
+        <div id="overlay">
+            <div>
+                <h2>Game Rules</h2>
+                <p>
+                    Welcome to DiceGame, a thrilling game of chance and strategy
+                    played between you and the computer!
+                </p>
+
+                <h3>Rules for Your Turn:</h3>
+
+                <ul>
+                    <li>
+                        You have two dice to roll, and the sum of both dice is
+                        added to your current turn score.
+                    </li>
+                    <li>
+                        End your turn in one of three ways: turn over your dice
+                        to add your current turn score to your total score, roll
+                        a single 1 to reset your current turn score to 0, or
+                        roll two 1's to reset your total score to 0 and end your
+                        turn.
+                    </li>
+                    <li>
+                        Alternatively, win the game by reaching a score of 100
+                        or above. If the total score reaches 100 or more during
+                        your turn, the game ends immediately, even if your
+                        current turn is not completed.
+                    </li>
+                </ul>
+
+                <p>
+                    Once your turn ends without you winning, it's the computer's
+                    turn.
+                </p>
+
+                <h3>Rules for the Computer's Turn:</h3>
+
+                <ul>
+                    <li>
+                        The computer rolls the dice automatically and follows
+                        the same rules as you.
+                    </li>
+                    <li>
+                        If the computer rolls a 1, its current turn score resets
+                        to 0, just like yours. If the computer rolls two 1's,
+                        its total score resets to 0, and its turn ends.
+                    </li>
+                    <li>
+                        The computer has a strategic advantage: if it reaches a
+                        current turn score of 20 or more, it turns over its
+                        dice, adding the turn score to its total score, and then
+                        continues its turn.
+                    </li>
+                    <li>
+                        The game ends immediately if the computer's total score
+                        reaches 100 or more, and the computer emerges as the
+                        winner.
+                    </li>
+                </ul>
+
+                <p>
+                    Get ready for a fun and competitive gaming experience with
+                    DiceGame!
+                </p>
+                <button id="start-btn">Start</button>
+            </div>
         </div>
-        <button id="roll-btn">Roll</button>
-        <button id="turn-over-btn">Turn Over</button>
-    </main>
 
-    <div id="turn-score">
-        <h2>Turn Score</h2>
-        <div><span>0</span></div>
-    </div>
+        <footer>
+            <span>By Anas Bashir</span>
+            <a
+                href="http://github.com/an4s911/dicegame"
+                id="github-repo"
+                target="_blank"
+            >
+                <img src="./media/github-icon.png" alt="github-logo" />
+            </a>
+        </footer>
 
-    <div id="info-box">
-        <div>
-            <p></p>
-        </div>
-    </div>
-
-    <div id="overlay">
-        <div>
-            <h2>Game Rules</h2>
-            <p>Welcome to DiceGame, a thrilling game of chance and strategy played between you and the computer!</p>
-
-            <h3>Rules for Your Turn:</h3>
-
-            <ul>
-                <li>You have two dice to roll, and the sum of both dice is added to your current turn score.</li>
-                <li>End your turn in one of three ways: turn over your dice to add your current turn score to your total
-                    score, roll a single 1 to reset your current turn score to 0, or roll two 1's to reset your total
-                    score to 0 and end your turn.</li>
-                <li>
-                    Alternatively, win the game by reaching a score of 100 or above. If the total score reaches 100 or
-                    more
-                    during your turn, the game ends immediately, even if your current turn is not completed.
-                </li>
-            </ul>
-
-            <p>Once your turn ends without you winning, it's the computer's turn.</p>
-
-            <h3>Rules for the Computer's Turn:</h3>
-
-            <ul>
-                <li>The computer rolls the dice automatically and follows the same rules as you.</li>
-                <li>If the computer rolls a 1, its current turn score resets to 0, just like yours. If the computer
-                    rolls two 1's, its total score resets to 0, and its turn ends.</li>
-                <li>The computer has a strategic advantage: if it reaches a current turn score of 20 or more, it turns
-                    over its dice, adding the turn score to its total score, and then continues its turn.</li>
-                <li>The game ends immediately if the computer's total score reaches 100 or more, and the computer
-                    emerges as the winner.
-                </li>
-            </ul>
-
-            <p>Get ready for a fun and competitive gaming experience with DiceGame!</p>
-            <button id="start-btn">Start</button>
-        </div>
-    </div>
-
-    <footer>
-        <span>By Anas Bashir</span>
-        <a href="http://github.com/an4s911/dicegame" id="github-repo" target="_blank">
-            <img src="./media/github-icon.png" alt="github-logo">
-        </a>
-
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-
+        <script src="script.js"></script>
+    </body>
 </html>
