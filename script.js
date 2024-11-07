@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     showInfoMsg("Click on Roll to begin the game");
 });
 
+document.querySelector("body").style.overflow = "hidden";
+
 const rollBtn = document.getElementById("roll-btn");
 const turnOverBtn = document.getElementById("turn-over-btn");
 
@@ -24,12 +26,14 @@ const startBtn = document.getElementById("start-btn");
 const showRulesBtn = document.getElementById("show-rules");
 
 startBtn.addEventListener("click", () => {
+    document.querySelector("body").style.overflow = "auto";
     overlay.style.display = "none";
 
 });
 
 showRulesBtn.addEventListener("click", () => {
     startBtn.textContent = "Continue";
+    document.querySelector("body").style.overflow = "hidden";
     overlay.style.display = "grid";
 });
 
