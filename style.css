@@ -42,11 +42,18 @@ header {
 
 #show-rules-btn {
     /* remove all button related styling */
+    cursor: pointer;
+    color: #00e;
     place-self: center;
     background: none;
     border: none;
     padding: 0;
     width: max-content;
+}
+
+#show-rules-btn:hover {
+    color: #0055ff;
+    transform: scale(1.05);
 }
 
 #total-scores {
@@ -358,7 +365,7 @@ footer img {
     width: 30px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 910px) {
     #overlay > div {
         margin: auto;
         height: 70%;
