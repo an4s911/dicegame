@@ -35,6 +35,7 @@ showRulesBtn.addEventListener("click", () => {
     startBtn.textContent = "Continue";
     document.querySelector("body").style.overflow = "hidden";
     overlay.style.display = "grid";
+    document.querySelector("#overlay > div").scrollTop = 0;
 });
 
 let user = {
