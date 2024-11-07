@@ -56,6 +56,8 @@ header {
 
     background-color: #c4d86f;
     gap: 15px;
+
+    display: grid;
 }
 
 #total-scores > div {
@@ -381,5 +383,13 @@ footer img {
 
     #info-box > div {
         padding: 30px 20px;
+    }
+
+    #total-scores {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #total-scores > h2 {
+        grid-column: span 2;
     }
 }
