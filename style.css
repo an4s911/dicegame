@@ -353,4 +353,24 @@ footer img {
         height: 80%;
         width: 90%;
     }
+
+    body {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "total-scores"
+            "game-play"
+            "turn-score"
+            "info-box"
+            "footer";
+    }
+
+    #info-box {
+        padding: 0;
+    }
+
+    #info-box > div {
+        padding: 30px 20px;
+    }
 }
