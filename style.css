@@ -295,7 +295,7 @@ div.dice {
     top: 0;
     left: 0;
     box-sizing: border-box;
-    padding: 10% 20%;
+    /* padding: 10% 20%; */
 
     display: grid;
     place-content: center;
@@ -304,8 +304,10 @@ div.dice {
 #overlay > div {
     border: 2px solid black;
     border-radius: 15px;
-    height: 100%;
-    width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    width: 80%;
+    margin: 0 auto;
     background-color: antiquewhite;
     padding: 30px 50px;
     box-sizing: border-box;
@@ -343,4 +345,12 @@ footer {
 
 footer img {
     width: 30px;
+}
+
+@media (max-width: 768px) {
+    #overlay > div {
+        margin: auto;
+        height: 90%;
+        width: 90%;
+    }
 }
