@@ -23,12 +23,11 @@ const winningScore = 100;
 const overlay = document.getElementById("overlay");
 const startBtn = document.getElementById("start-btn");
 
-const showRulesBtn = document.getElementById("show-rules");
+const showRulesBtn = document.getElementById("show-rules-btn");
 
 startBtn.addEventListener("click", () => {
     document.querySelector("body").style.overflow = "auto";
     overlay.style.display = "none";
-
 });
 
 showRulesBtn.addEventListener("click", () => {
