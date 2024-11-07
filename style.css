@@ -350,7 +350,7 @@ footer img {
 @media (max-width: 768px) {
     #overlay > div {
         margin: auto;
-        height: 90%;
+        height: 80%;
         width: 90%;
     }
 }
